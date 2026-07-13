@@ -1,0 +1,144 @@
+/* ==========================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: hsl(257, 40%, 49%); /* The exact Huddle Purple */
+  background-image: url('images/bg-mobile.svg'); /* Default mobile background */
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Make sure the main mockup image scales smoothly inside its container */
+.mockup-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================
+   2. TYPOGRAPHY & INTERACTIVE ELEMENTS
+   ========================================== */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+p {
+  color: hsla(0, 0%, 100%, 0.85); /* Slightly transparent white for better reading readability */
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.cta-btn {
+  background-color: white;
+  color: hsl(257, 40%, 49%);
+  padding: 14px 40px;
+  border: none;
+  border-radius: 50px; /* Pill-shaped */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: hsl(300, 69%, 71%); /* Soft pink accent for active hover state */
+  color: white;
+}
+
+/* ==========================================
+   3. MOBILE-FIRST LAYOUT DEFS (DEFAULT)
+   ========================================== */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 40px 30px;
+}
+
+.main-header {
+  margin-bottom: 40px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center; /* Centers layout structure text elements on mobile views */
+}
+
+.social-footer {
+  display: flex;
+  justify-content: center; /* Centers links horizontally on mobile screens */
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.icon-link {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.icon-link:hover {
+  color: hsl(300, 69%, 71%);
+  border-color: hsl(300, 69%, 71%);
+}
+
+/* ==========================================
+   4. DESKTOP RESPONSIVE BREAKPOINT
+   ========================================== */
+@media (min-width: 768px) {
+  body {
+    background-image: url('images/bg-desktop.svg'); /* Swaps out mobile SVG grid backdrop assets */
+    background-position: center;
+    background-size: cover;
+  }
+
+  .page-wrapper {
+    padding: 50px 80px;
+  }
+
+  .logo {
+    max-width: 200px;
+  }
+
+  .content-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Splits desktop space asymmetrically */
+    align-items: center;
+    gap: 60px;
+    text-align: left; /* Restores standard reading direction layouts */
+    margin: auto 0; /* Keeps structural elements floating balanced within viewport constraints */
+  }
+
+  .social-footer {
+    justify-content: flex-end; /* Shoves links over to bottom-right layout targets */
+    margin-top: 0;
+  }
+}
